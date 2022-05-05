@@ -3,6 +3,8 @@ import streamlit as st
 from googleapiclient.discovery import build
 #from googleapiclient.errors import HttpError
 from google.oauth2 import service_account
+import time
+
 SCOPES = ['https://www.googleapis.com/auth/sqlservice.admin']
 SERVICE_ACCOUNT_FILE = 'keys.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -43,6 +45,7 @@ class Google_sheet():
     
     def input_data(self,**kwargs):
         ###############################################################################
+        time.sleep(1)
         
         
         position=kwargs.get('position',[1,1])
@@ -59,6 +62,7 @@ class Google_sheet():
 
         ################################################################################################
     def show_data(self,**kwargs):
+        time.sleep(1)
         pos=kwargs.get('pos',[])
         arr=self.url.split('/')
         arr.pop()
